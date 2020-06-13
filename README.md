@@ -1,2 +1,1 @@
-# phone_input_validator
-phone input validate and hidden input post form 
+https://intl-tel-input.com/node_modules/intl-tel-input/examples/gen/hidden-input.html

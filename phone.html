@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/intlTelInput.css">
+    <title>Document</title>
+</head>
+<body>
+    <form method="GET">
+        <p id="output"></p>
+        <input type="tel" id="phone">
+        <input type="tel" name="tel" id="tel">
+        <button type="submit">Gönder</button>
+    </form>
+  
+
+<script src="asset/js/intlTelInput.js"></script>
+<script>
+
+    //phone input
+var input = document.querySelector("#phone"),
+  output = document.querySelector("#output");
+
+var iti = window.intlTelInput(input, {
+  nationalMode: true,
+  utilsScript: "asset/js/utils.js?1590403638580" // just for formatting/placeholders etc
+});
+
+var handleChange = function() {
+  var text = (iti.isValidNumber()) ? + iti.getNumber() : NULL ;
+  var textNode = document.createTextNode('');
+  output.innerHTML = "";
+  output.appendChild(textNode);
+  document.getElementById("tel").value = "+"+text
+};
+
+// listen to "keyup", but also "change" to update when the user selects a country
+input.addEventListener('change', handleChange);
+input.addEventListener('keyup', handleChange);
+
+//phone input son
+
+
+
+
+
+</script>
+</body>
+</html>
